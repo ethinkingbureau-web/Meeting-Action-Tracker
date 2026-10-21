@@ -68,6 +68,17 @@ h1, h2, h3, p { margin: 0; }
 .eyebrow { color: var(--muted); font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 h1 { color: var(--accent); font-family: var(--display); font-weight: 700; font-size: 2.6rem; line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
 .sub { color: var(--muted); }
+.title-row { display: flex; align-items: center; gap: 14px; }
+.title-row h1 { min-width: 0; }
+.unicorn { flex: none; width: 78px; height: auto; overflow: visible; }
+.u-mane, .u-horn, .u-spark { fill: var(--accent); }
+.u-mane2 { fill-opacity: .6; }
+.u-head { fill: #fff; stroke: #2B1220; stroke-width: 2.5; stroke-linejoin: round; }
+.u-horn { stroke: #2B1220; stroke-width: 2.5; stroke-linejoin: round; }
+.u-stripe { fill: none; stroke: #fff; stroke-opacity: .6; stroke-width: 2; }
+.u-blush { fill: var(--accent); fill-opacity: .3; }
+.u-eye, .u-nostril { fill: #2B1220; }
+.u-glint { fill: #fff; }
 
 /* Summary */
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -144,6 +155,8 @@ h1 { color: var(--accent); font-family: var(--display); font-weight: 700; font-s
   body { font-size: 17px; padding-block: 28px 64px; }
   body { background-size: 240px 240px, 240px 240px, 200px 200px; background-position: right -50px top -40px, left -50px bottom -40px, 0 0; }
   h1 { font-size: 2.1rem; }
+  .unicorn { width: 60px; }
+  .title-row { gap: 10px; }
   .stat { padding: 16px; }
   .num { font-size: 2.4rem; }
   .add { padding: 18px; }
@@ -161,7 +174,24 @@ h1 { color: var(--accent); font-family: var(--display); font-weight: 700; font-s
 <main class="app">
   <header class="head">
     <p class="eyebrow" id="today"></p>
-    <h1>Meeting actions</h1>
+    <div class="title-row">
+      <h1>Meeting actions</h1>
+      <svg class="unicorn" viewBox="0 0 104 100" aria-hidden="true" focusable="false">
+      <path class="u-mane" d="M38 36 C22 36 14 48 18 62 C20 70 16 78 22 88 C26 78 28 70 30 62 C32 54 36 48 40 44 Z"/>
+      <path class="u-mane u-mane2" d="M36 46 C26 52 22 64 26 76 C28 82 26 90 30 98 C34 90 34 82 34 72 C34 62 36 54 40 50 Z"/>
+      <path class="u-head" d="M32 96 C30 78 30 58 36 42 L40 26 L49 38 C54 40 58 38 62 38 C70 42 78 48 86 56 C92 62 94 68 90 73 C86 77 80 77 76 74 C70 72 66 74 62 70 C58 78 58 88 60 96 C52 99 40 99 32 96 Z"/>
+      <path class="u-blush" d="M40.5 33 L45 38 L39.5 39 Z"/>
+      <path class="u-horn" d="M55 41 L64 41 L70 6 Z"/>
+      <path class="u-stripe" d="M57.2 34 L62.4 35 M58.8 27 L63.8 28 M60.4 20 L65.2 21"/>
+      <path class="u-mane u-fore" d="M47 38 C43 29 52 25 57 34 C54 37 50 38 47 38 Z"/>
+      <circle class="u-blush" cx="70" cy="62" r="5.5"/>
+      <circle class="u-eye" cx="62" cy="53" r="3.2"/>
+      <circle class="u-glint" cx="63" cy="52" r="1"/>
+      <ellipse class="u-nostril" cx="87" cy="64" rx="1.6" ry="2.2"/>
+      <path class="u-spark" d="M92 14 Q92 20 98 20 Q92 20 92 26 Q92 20 86 20 Q92 20 92 14 Z"/>
+      <path class="u-spark" d="M99 36 Q99 39 102 39 Q99 39 99 42 Q99 39 96 39 Q99 39 99 36 Z"/>
+      </svg>
+    </div>
     <p class="sub">Every action gets one owner and one due date.</p>
   </header>
 
