@@ -70,7 +70,7 @@ h1 { color: var(--accent); font-family: var(--display); font-weight: 700; font-s
 .sub { color: var(--muted); }
 .title-row { display: flex; align-items: center; gap: 14px; }
 .title-row h1 { min-width: 0; }
-.unicorn { flex: none; width: 78px; height: auto; overflow: visible; }
+.unicorn { flex: none; display: block; width: 78px; height: 75px; overflow: visible; }
 .u-mane, .u-horn, .u-spark { fill: var(--accent); }
 .u-mane2 { fill-opacity: .6; }
 .u-head { fill: #fff; stroke: #2B1220; stroke-width: 2.5; stroke-linejoin: round; }
@@ -155,7 +155,7 @@ h1 { color: var(--accent); font-family: var(--display); font-weight: 700; font-s
   body { font-size: 17px; padding-block: 28px 64px; }
   body { background-size: 240px 240px, 240px 240px, 200px 200px; background-position: right -50px top -40px, left -50px bottom -40px, 0 0; }
   h1 { font-size: 2.1rem; }
-  .unicorn { width: 60px; }
+  .unicorn { width: 60px; height: 58px; }
   .title-row { gap: 10px; }
   .stat { padding: 16px; }
   .num { font-size: 2.4rem; }
@@ -176,7 +176,7 @@ h1 { color: var(--accent); font-family: var(--display); font-weight: 700; font-s
     <p class="eyebrow" id="today"></p>
     <div class="title-row">
       <h1>Meeting actions</h1>
-      <svg class="unicorn" viewBox="0 0 104 100" aria-hidden="true" focusable="false">
+      <svg class="unicorn" viewBox="0 0 104 100" width="78" height="75" aria-hidden="true" focusable="false">
       <path class="u-mane" d="M38 36 C22 36 14 48 18 62 C20 70 16 78 22 88 C26 78 28 70 30 62 C32 54 36 48 40 44 Z"/>
       <path class="u-mane u-mane2" d="M36 46 C26 52 22 64 26 76 C28 82 26 90 30 98 C34 90 34 82 34 72 C34 62 36 54 40 50 Z"/>
       <path class="u-head" d="M32 96 C30 78 30 58 36 42 L40 26 L49 38 C54 40 58 38 62 38 C70 42 78 48 86 56 C92 62 94 68 90 73 C86 77 80 77 76 74 C70 72 66 74 62 70 C58 78 58 88 60 96 C52 99 40 99 32 96 Z"/>
