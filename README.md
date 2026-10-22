@@ -5,7 +5,26 @@ A single-page app for teams that keep forgetting agreed actions. No build step, 
 - Add an action with an owner and a due date
 - Actions are grouped by owner, each with a tick box for done
 - Open, done and overdue counts at the top; overdue actions are highlighted in red
-- Data is saved in the browser's local storage (per browser and device, not shared between teammates)
+- Sign in with a username and password; everyone who is signed in shares one list
+- Data is stored in Supabase (table `public.meeting_actions`) and updates live across open copies of the app
+
+## Data and sign-in
+
+The page talks to Supabase directly with the project's publishable key (in `index.html`). Row-level security only lets signed-in users read, add, tick and delete actions.
+
+Passwords live in Supabase Auth (`auth.users`). `public.profiles` holds each user's username and display name and is filled automatically when a user is added.
+
+Users sign in with a username. The app turns it into the email `<username>@meeting-tracker.local` (set by `LOGIN_DOMAIN` in `index.html`); no mail is sent to that address. Typing a full email address also works.
+
+### Adding a user
+
+In the Supabase dashboard go to **Authentication → Users → Add user → Create new user**:
+
+- Email: `<username>@meeting-tracker.local`, for example `sara@meeting-tracker.local`
+- Password: their first password
+- Tick **Auto Confirm User**
+
+The profile is created with the username before the `@` and a capitalised display name (for example "Sara"). To change the display name, edit `display_name` in the `profiles` table.
 
 ## Deploy to Vercel
 
